@@ -1,0 +1,17 @@
+ucp\gmartineza\football\AVAR.class
+ucp\gmartineza\football\TarjetaRoja.class
+ucp\gmartineza\football\Jugador.class
+ucp\gmartineza\football\PantallaLed.class
+ucp\gmartineza\football\Torneo.class
+ucp\gmartineza\football\TarjetaAmarilla.class
+ucp\gmartineza\football\AsistenteDeVideo.class
+ucp\gmartineza\football\Estadio.class
+ucp\gmartineza\football\IntegranteDelVar.class
+ucp\gmartineza\football\Partido.class
+ucp\gmartineza\football\ArbitroBase.class
+ucp\gmartineza\football\TarjetaBase.class
+ucp\gmartineza\football\Interfaces\IImprimible.class
+ucp\gmartineza\football\Equipo.class
+ucp\gmartineza\football\Interfaces\IJugador.class
+ucp\gmartineza\football\Var.class
+ucp\gmartineza\football\Arbitro.class

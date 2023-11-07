@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Partido.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">football</a> &gt; <a href="index.source.html" class="el_package">ucp.gmartineza.football</a> &gt; <span class="el_source">Partido.java</span></div><h1>Partido.java</h1><pre class="source lang-java linenums">package ucp.gmartineza.football;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Partido {
+    private String fecha;
+    private Equipo equipoLocal;
+    private Equipo equipoVisitante;
+<span class="fc" id="L10">    private List&lt;TarjetaBase&gt; tarjetas = new ArrayList&lt;&gt;();</span>
+    private String nombre;
+    private Estadio estadio;
+    private Arbitro arbitro;
+<span class="fc" id="L14">    private List&lt;Arbitro&gt; arbitrosLinea = new ArrayList&lt;&gt;(); // 2...2</span>
+    private Arbitro arbitroAsistente;
+
+    public Arbitro getArbitroAsistente() {
+<span class="fc" id="L18">        return arbitroAsistente;</span>
+    }
+
+    public void setArbitroAsistente(Arbitro arbitroAsistente) {
+<span class="fc" id="L22">        this.arbitroAsistente = arbitroAsistente;</span>
+<span class="fc" id="L23">    }</span>
+
+    public List&lt;Arbitro&gt; getArbitrosLinea() {
+<span class="fc" id="L26">        return arbitrosLinea;</span>
+    }
+
+    public void setArbitrosLinea(List&lt;Arbitro&gt; arbitroLinea) {
+<span class="nc bnc" id="L30" title="All 2 branches missed.">        if (this.arbitrosLinea.size() == 2) {</span>
+<span class="nc" id="L31">            this.arbitrosLinea = arbitroLinea;</span>
+        } else {
+<span class="nc" id="L33">            throw new IllegalArgumentException(&quot;ArbitroLinea list must contain exactly 2 items.&quot;);</span>
+        }
+<span class="nc" id="L35">    }</span>
+
+    public void setArbitroLinea(Arbitro arbitroLinea1, Arbitro arbitroLinea2){
+<span class="fc" id="L38">        this.arbitrosLinea.add(arbitroLinea1);</span>
+<span class="fc" id="L39">        this.arbitrosLinea.add(arbitroLinea2);</span>
+<span class="fc" id="L40">    }</span>
+
+    public Arbitro getArbitro() {
+<span class="fc" id="L43">        return arbitro;</span>
+    }
+
+    public void setArbitro(Arbitro arbitro) {
+<span class="fc" id="L47">        this.arbitro = arbitro;</span>
+<span class="fc" id="L48">    }</span>
+
+    public Estadio getEstadio() {
+<span class="fc" id="L51">        return estadio;</span>
+    }
+
+    public void setEstadio(Estadio estadio) {
+<span class="fc" id="L55">        this.estadio = estadio;</span>
+<span class="fc" id="L56">    }</span>
+
+    public String getFecha() {
+<span class="nc" id="L59">        return fecha;</span>
+    }
+
+    public void setFecha(String fecha) {
+<span class="nc" id="L63">        this.fecha = fecha;</span>
+<span class="nc" id="L64">    }</span>
+
+    public Equipo getEquipoLocal() {
+<span class="fc" id="L67">        return equipoLocal;</span>
+    }
+
+    public void setEquipoLocal(Equipo equipoLocal) {
+<span class="fc" id="L71">        this.equipoLocal = equipoLocal;</span>
+<span class="fc" id="L72">    }</span>
+
+    public Equipo getEquipoVisitante() {
+<span class="fc" id="L75">        return equipoVisitante;</span>
+    }
+
+    public void setEquipoVisitante(Equipo equipoVisitante) {
+<span class="fc" id="L79">        this.equipoVisitante = equipoVisitante;</span>
+<span class="fc" id="L80">    }</span>
+
+    public List&lt;TarjetaBase&gt; getTarjetas() {
+<span class="fc" id="L83">        return tarjetas;</span>
+    }
+
+    public void setTarjetas(List&lt;TarjetaBase&gt; tarjetas) {
+<span class="nc" id="L87">        this.tarjetas = tarjetas;</span>
+<span class="nc" id="L88">    }</span>
+
+    public String getName() {
+<span class="fc" id="L91">        return (this.nombre + &quot; &quot; + this.equipoLocal.getAbreviatura() + &quot;x&quot; + this.equipoVisitante.getAbreviatura());</span>
+    }
+
+    public void setNombre(String nombre) {
+<span class="fc" id="L95">        this.nombre = nombre;</span>
+<span class="fc" id="L96">    }</span>
+
+    // Constructor
+<span class="fc" id="L99">    public Partido(Equipo pEquipoLocal, Equipo pEquipoVisitante, String pNombre) {</span>
+<span class="fc" id="L100">        setEquipoLocal(pEquipoLocal);</span>
+<span class="fc" id="L101">        setEquipoVisitante(pEquipoVisitante);</span>
+<span class="fc" id="L102">        setNombre(pNombre);</span>
+<span class="fc" id="L103">    }</span>
+
+<span class="fc" id="L105">    public Partido(Estadio pEstadio, Equipo pEquipoLocal, Equipo pEquipoVisitante, String pNombre) {</span>
+<span class="fc" id="L106">        setEstadio(pEstadio);</span>
+<span class="fc" id="L107">        setEquipoLocal(pEquipoLocal);</span>
+<span class="fc" id="L108">        setEquipoVisitante(pEquipoVisitante);</span>
+<span class="fc" id="L109">        setNombre(pNombre);</span>
+<span class="fc" id="L110">    }</span>
+
+<span class="fc" id="L112">    public Partido(Estadio pEstadio, Equipo pEquipoLocal, Equipo pEquipoVisitante, String pNombre, Arbitro arbitro, Arbitro arbitroLinea1, Arbitro arbitroLinea2, Arbitro arbitroAsistente) {</span>
+<span class="fc" id="L113">        setEstadio(pEstadio);</span>
+<span class="fc" id="L114">        setEquipoLocal(pEquipoLocal);</span>
+<span class="fc" id="L115">        setEquipoVisitante(pEquipoVisitante);</span>
+<span class="fc" id="L116">        setNombre(pNombre);</span>
+<span class="fc" id="L117">        setArbitro(arbitro);</span>
+<span class="fc" id="L118">        setArbitroLinea(arbitroLinea1, arbitroLinea2);</span>
+<span class="fc" id="L119">        setArbitroAsistente(arbitroAsistente);</span>
+<span class="fc" id="L120">    }</span>
+
+    public void agregar(TarjetaBase pTarjeta) {
+<span class="fc" id="L123">        this.tarjetas.add(pTarjeta);</span>
+<span class="fc" id="L124">    }</span>
+
+    public int tarjetasCantidad() {
+<span class="fc" id="L127">        return getTarjetas().size();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

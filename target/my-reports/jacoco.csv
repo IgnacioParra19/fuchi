@@ -1,0 +1,16 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+football,ucp.gmartineza.football,TarjetaBase,16,23,0,0,3,10,1,5,1,5
+football,ucp.gmartineza.football,Arbitro,0,4,0,0,0,2,0,1,0,1
+football,ucp.gmartineza.football,Var,6,115,0,4,2,31,2,14,2,12
+football,ucp.gmartineza.football,Equipo,12,110,0,6,6,29,3,13,3,10
+football,ucp.gmartineza.football,AVAR,0,5,0,0,0,2,0,1,0,1
+football,ucp.gmartineza.football,TarjetaAmarilla,0,5,0,0,0,2,0,1,0,1
+football,ucp.gmartineza.football,TarjetaRoja,0,5,0,0,0,2,0,1,0,1
+football,ucp.gmartineza.football,IntegranteDelVar,3,11,0,0,1,5,1,2,1,2
+football,ucp.gmartineza.football,Torneo,22,42,0,0,10,13,6,7,6,7
+football,ucp.gmartineza.football,AsistenteDeVideo,7,5,0,0,3,2,2,1,2,1
+football,ucp.gmartineza.football,PantallaLed,0,6,0,0,0,2,0,2,0,2
+football,ucp.gmartineza.football,ArbitroBase,3,10,0,0,1,5,1,2,1,2
+football,ucp.gmartineza.football,Estadio,0,61,0,0,0,19,0,9,0,9
+football,ucp.gmartineza.football,Partido,26,158,2,0,9,48,5,20,4,20
+football,ucp.gmartineza.football,Jugador,0,51,0,0,0,17,0,8,0,8
