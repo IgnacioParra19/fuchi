@@ -1,7 +1,10 @@
-import org.junit.Test;
 import static org.junit.Assert.*;
 
-import ucp.fuol.com.*;
+import org.junit.Test;
+
+import ucp.fuol.com.Equipo;
+import ucp.fuol.com.Estadio;
+import ucp.fuol.com.Partido;
 
 public class EstadioTest {
     @Test

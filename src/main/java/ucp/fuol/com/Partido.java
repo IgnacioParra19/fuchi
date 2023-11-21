@@ -1,10 +1,12 @@
 package ucp.fuol.com;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Partido {
-    private String fecha;
+    private Date fecha;
     private Equipo equipoLocal;
     private Equipo equipoVisitante;
     private List<TarjetaBase> tarjetas = new ArrayList<>();
@@ -35,8 +37,8 @@ public class Partido {
     }
 
     public void setArbitroLinea(Arbitro arbitroLinea1, Arbitro arbitroLinea2){
-        this.arbitrosLinea.add(arbitroLinea1);
-        this.arbitrosLinea.add(arbitroLinea2);
+        this.getArbitrosLinea().add(arbitroLinea1);
+        this.getArbitrosLinea().add(arbitroLinea2);
     }
 
     public Arbitro getArbitro() {
@@ -53,14 +55,6 @@ public class Partido {
 
     public void setEstadio(Estadio estadio) {
         this.estadio = estadio;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
     }
 
     public Equipo getEquipoLocal() {
@@ -88,7 +82,7 @@ public class Partido {
     }
 
     public String getName() {
-        return (this.nombre + " " + this.equipoLocal.getAbreviatura() + "x" + this.equipoVisitante.getAbreviatura());
+        return (this.nombre + " " + this.getEquipoLocal().getAbreviatura() + "x" + this.getEquipoVisitante().getAbreviatura());
     }
 
     public void setNombre(String nombre) {
@@ -120,10 +114,21 @@ public class Partido {
     }
 
     public void agregar(TarjetaBase pTarjeta) {
-        this.tarjetas.add(pTarjeta);
+        this.getTarjetas().add(pTarjeta);
     }
 
     public int tarjetasCantidad() {
         return getTarjetas().size();
+    }
+    public Date getFecha(){
+        return fecha;
+    }
+    
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+    public String getFechaFormateada() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return sdf.format(getFecha());
     }
 }
